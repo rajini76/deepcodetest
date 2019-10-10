@@ -206,7 +206,7 @@ def getTable(request,csvfile_id):
             columns = df.toJSON().collect()
             #print(columns)
             columns = json.dumps("testing")
-            column = json.loads(columns)
+            column = json.loads(columns.decode())
 
            
             print(column)
