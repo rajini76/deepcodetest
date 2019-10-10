@@ -40,7 +40,7 @@ from pyspark.sql.functions import lit
 from pyspark.sql import functions as F
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType
 from pyspark.ml.feature import FeatureHasher
-#from pyspark.ml.feature import StandardScaler
+from pyspark.ml.feature import StandardScaler
 @csrf_exempt
 def redirect(request):
     return HttpResponseRedirect("index")
