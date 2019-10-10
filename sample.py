@@ -40,7 +40,7 @@ from pyspark.sql.functions import lit
 from pyspark.sql import functions as F
 from pyspark.sql.types import StructType, StructField, IntegerType, StringType
 from pyspark.ml.feature import FeatureHasher
-from pyspark.ml.feature import StandardScaler
+#from pyspark.ml.feature import StandardScaler
 @csrf_exempt
 def redirect(request):
     return HttpResponseRedirect("index")
@@ -60,7 +60,7 @@ def footer(request):
     return render(request,'Spark_poc/footer.html')
 
 @csrf_exempt
-def projcreation (request):
+def projcreation (request)
     if request.method == "POST":
         print("projcreation")
         form = ProjectForm(request.POST,request.FILES)
@@ -90,7 +90,7 @@ def deleteProject(request, project_id):
     formFile =  CSVFile.objects.filter(project_fk = project_id)
     print(formFile)
     if formFile.count()==0:
-        print('inside form')
+       print('inside form')
         projectdelete =  get_object_or_404(Project, id=project_id).delete()
         query_results = Project.objects.all()
         print(query_results)
@@ -205,7 +205,7 @@ def getTable(request,csvfile_id):
             print(header)
             columns = df.toJSON().collect()
             #print(columns)
-            columns = json.dumps(columns)
+            columns = json.dumps("testing")
             column = json.loads(columns)
 
            
